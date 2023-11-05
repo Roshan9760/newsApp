@@ -70,11 +70,14 @@ export class News extends Component {
          loading:false
       })
   }
+  Capitalize(str){
+       return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
   render() {
     return (
       <div className='container  my-6 ' >
-          <h1 className='text-center' style={{margin:'40px 0px'}}>Here is Your Top Headline </h1>
+          <h1 className='text-center' style={{margin:'40px 0px'}}>Here is Your Top Headline of {this.Capitalize(this.props.category)}</h1>
           {
               this.state.loading && <Spinner/>
           }
